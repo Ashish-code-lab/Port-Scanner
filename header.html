@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Port Checker</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+        
+        .main-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .card-section {
+            padding: 2rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .card-section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .help-text {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+        
+        .ports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .port-item {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            padding: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .port-item:hover {
+            background: var(--gray-100);
+            border-color: var(--primary);
+        }
+        
+        .port-number {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        
+        .port-service {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn:disabled {
+            background: var(--gray-500);
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gray-200);
+        }
+        
+        .scan-all-btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .status.scanning {
+            background: #eff6ff;
+            color: var(--primary);
+            border: 1px solid #dbeafe;
+        }
+        
+        .status.error {
+            background: #fef2f2;
+            color: var(--danger);
+            border: 1px solid #fecaca;
+        }
+        
+        .status.success {
+            background: #f0fdf4;
+            color: var(--success);
+            border: 1px solid #bbf7d0;
+        }
+        
+        .results {
+            margin-top: 2rem;
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+        
+        .results-stats {
+            background: var(--gray-50);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .results-table th,
+        .results-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .results-table th {
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+        
+        .port-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .status-open {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status-closed {
+            background: #f3f4f6;
+            color: var(--gray-500);
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .disclaimer {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            color: #92400e;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ports-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Online Port Checker</h1>
+            <p>It has become hassle-free to check the availability of ports associated with a specific domain or IP address.</p>
+        </div>
+        
+        <div class="disclaimer">
+            ⚠️ <strong>EDUCATIONAL USE ONLY:</strong> This tool is for testing systems you own or have explicit permission to scan. 
+            Unauthorized port scanning may be illegal.
+        </div>
+        
+        <div class="main-card">
+            <div class="card-section">
+                <h2 class="section-title">SCAN PORT</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="host">Domain / IP</label>
+                        <input type="text" id="host" placeholder="example.com or 192.168.1.1" value="scanme.nmap.org">
+                        <div class="help-text">Enter a hostname or IP address to scan</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ports">Ports</label>
+                        <input type="text" id="ports" placeholder="21,22,80,443 or 1-100" value="21,22,80,443">
+                        <div class="help-text">Enter ports as: single (80), list (22,80,443), or range (1-100)</div>
+                    </div>
+                </div>
+                
+                <button class="btn" id="scanBtn" style="margin-top: 1rem;">
+                    Start Port Scan
+                </button>
+            </div>
+            
+            <div class="card-section">
+                <h2 class="section-title">COMMON PORTS</h2>
+                <div class="ports-grid" id="commonPorts">
+                    <!-- Common ports will be populated by JavaScript -->
+                </div>
+                
+                <button class="btn btn-secondary scan-all-btn" id="scanAllCommon">
+                    Scan All Common Ports
+                </button>
+            </div>
+        </div>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        
+        <div class="main-card" id="resultsCard" style="display: none;">
+            <div class="card-section">
+                <div class="results-header">
+                    <h2 class="section-title">SCAN RESULTS</h2>
+                </div>
+                
+                <div class="results-stats">
+                    <div class="stats-grid" id="resultsStats">
+                        <!-- Stats will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="results">
+                    <table class="results-table" id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Port</th>
+                                <th>Service</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                            <!-- Results will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common ports data
+        const commonPorts = {
+            '21': 'FTP', '22': 'SSH', '23': 'Telnet', '25': 'SMTP', '53': 'DNS',
+            '80': 'HTTP', '110': 'POP3', '115': 'SFTP', '135': 'RPC', '139': 'NetBIOS',
+            '143': 'IMAP', '194': 'IRC', '443': 'SSL', '445': 'SMB', '1433': 'MSSQL',
+            '3306': 'MySQL', '3389': 'Remote Desktop', '5632': 'PCAnywhere', 
+            '5900': 'VNC', '25665': 'Minecraft'
+        };
+
+        // Populate common ports grid
+        function populateCommonPorts() {
+            const container = document.getElementById('commonPorts');
+            container.innerHTML = '';
+            
+            Object.entries(commonPorts).forEach(([port, service]) => {
+                const portElement = document.createElement('div');
+                portElement.className = 'port-item';
+                portElement.innerHTML = `
+                    <div class="port-number">${port}</div>
+                    <div class="port-service">${service}</div>
+                `;
+                portElement.addEventListener('click', () => {
+                    addPortToInput(port);
+                });
+                container.appendChild(portElement);
+            });
+        }
+
+        // Add port to input field
+        function addPortToInput(port) {
+            const portsInput = document.getElementById('ports');
+            const currentPorts = portsInput.value.split(',').map(p => p.trim()).filter(p => p);
+            
+            if (!currentPorts.includes(port)) {
+                currentPorts.push(port);
+                portsInput.value = currentPorts.join(', ');
+            }
+        }
+
+        // Scan function
+        async function performScan(scanAllCommon = false) {
+            const host = document.getElementById('host').value.trim();
+            const ports = document.getElementById('ports').value.trim();
+            const scanBtn = document.getElementById('scanBtn');
+            const scanAllBtn = document.getElementById('scanAllCommon');
+            const status = document.getElementById('status');
+            const resultsCard = document.getElementById('resultsCard');
+            
+            // Basic validation
+            if (!host) {
+                showStatus('Please enter a domain or IP address', 'error');
+                return;
+            }
+            
+            if (!scanAllCommon && !ports) {
+                showStatus('Please enter ports to scan or click "Scan All Common Ports"', 'error');
+                return;
+            }
+            
+            // Disable buttons and show scanning status
+            scanBtn.disabled = true;
+            scanAllBtn.disabled = true;
+            scanBtn.innerHTML = '<div class="spinner"></div> Scanning...';
+            scanAllBtn.innerHTML = '<div class="spinner"></div> Scanning...';
+            resultsCard.style.display = 'none';
+            showStatus('Scanning in progress... This may take a few moments.', 'scanning');
+            
+            try {
+                const response = await fetch('/scan', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        host: host,
+                        ports: ports,
+                        scan_all_common: scanAllCommon
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || 'Scan failed');
+                }
+                
+                // Display results
+                displayResults(data);
+                showStatus('Scan completed successfully!', 'success');
+                
+            } catch (error) {
+                showStatus(`Error: ${error.message}`, 'error');
+            } finally {
+                // Re-enable buttons
+                scanBtn.disabled = false;
+                scanAllBtn.disabled = false;
+                scanBtn.textContent = 'Start Port Scan';
+                scanAllBtn.textContent = 'Scan All Common Ports';
+            }
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+        }
+
+        function displayResults(data) {
+            const resultsCard = document.getElementById('resultsCard');
+            const resultsStats = document.getElementById('resultsStats');
+            const resultsBody = document.getElementById('resultsBody');
+            
+            // Calculate stats
+            const openPorts = data.results.filter(result => result.open);
+            const closedPorts = data.results.filter(result => !result.open);
+            
+            // Update stats
+            resultsStats.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-value">${data.scanned_ports_count}</div>
+                    <div class="stat-label">Total Ports Scanned</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" style="color: var(--success);">${openPorts.length}</div>
+                    <div class="stat-label">Open Ports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" style="color: var(--gray-500);">${closedPorts.length}</div>
+                    <div class="stat-label">Closed Ports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${data.host}</div>
+                    <div class="stat-label">Target</div>
+                </div>
+            `;
+            
+            // Clear previous results
+            resultsBody.innerHTML = '';
+            
+            // Add results to table
+            data.results.forEach(result => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td><strong>${result.port}</strong></td>
+                    <td>${result.service}</td>
+                    <td>
+                        <span class="port-status ${result.open ? 'status-open' : 'status-closed'}">
+                            ${result.open ? 'Open' : 'Closed'}
+                        </span>
+                    </td>
+                `;
+                
+                resultsBody.appendChild(row);
+            });
+            
+            resultsCard.style.display = 'block';
+            resultsCard.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Event listeners
+        document.getElementById('scanBtn').addEventListener('click', () => performScan(false));
+        document.getElementById('scanAllCommon').addEventListener('click', () => performScan(true));
+        
+        // Initialize common ports grid
+        populateCommonPorts();
+    </script>
+</body>
+</html>
