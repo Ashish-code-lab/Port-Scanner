@@ -1,4 +1,4 @@
-# 🔒 CyberShield Port Scanner
+# CyberShield Port Scanner
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)
@@ -7,16 +7,16 @@
 
 A professional, educational port scanning web application built with Python Flask and modern JavaScript. Designed for network security professionals and cybersecurity students to learn about port scanning methodologies in a safe, controlled environment.
 
-## 🚀 Features
+## Features
 
-- **🔍 Advanced Port Scanning** - TCP connect scanning with service detection
-- **⚡ High Performance** - Concurrent scanning with configurable workers
-- **🛡️ Security First** - Rate limiting, input validation, and abuse prevention
-- **📱 Responsive Design** - Mobile-friendly interface with real-time updates
-- **🎯 Multiple Input Formats** - Support for single ports, ranges, and lists
-- **📊 Detailed Reporting** - Comprehensive results with service identification
+- ** Advanced Port Scanning** - TCP connect scanning with service detection
+- ** High Performance** - Concurrent scanning with configurable workers
+- ** Security First** - Rate limiting, input validation, and abuse prevention
+- ** Responsive Design** - Mobile-friendly interface with real-time updates
+- ** Multiple Input Formats** - Support for single ports, ranges, and lists
+- ** Detailed Reporting** - Comprehensive results with service identification
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Backend:**
 - Python 3.9+
@@ -30,7 +30,7 @@ A professional, educational port scanning web application built with Python Flas
 - CSS3 with Grid & Flexbox
 - Responsive design principles
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 # Run the application
 python app.py
-🎮 Usage
+Usage
 Basic Scanning
 Enter a target (domain or IP address)
 
@@ -66,7 +66,7 @@ bash
 scanme.nmap.org
 localhost
 127.0.0.1
-🔧 API Documentation
+API Documentation
 Scan Endpoint
 http
 POST /scan
@@ -90,7 +90,7 @@ json
     {"port": 443, "open": false, "service": "https"}
   ]
 }
-🧪 Testing
+Testing
 Run the test suite to verify functionality:
 
 bash
@@ -99,7 +99,7 @@ python -m pytest tests/
 
 # Run specific test module
 python -m pytest tests/test_scanner.py -v
-🛡️ Security Features
+Security Features
 Rate Limiting: 10 requests per minute per IP
 
 Input Validation: Comprehensive host and port validation
@@ -110,18 +110,18 @@ Concurrency Limits: Maximum 50 concurrent socket connections
 
 Timeout Protection: 2-second socket timeout per port
 
-⚠️ Legal Disclaimer
+Legal Disclaimer
 This tool is for educational and authorized testing purposes only.
 
-🔒 Only scan systems you own or have explicit permission to test
+Only scan systems you own or have explicit permission to test
 
-⚖️ Unauthorized port scanning may be illegal in your jurisdiction
+Unauthorized port scanning may be illegal in your jurisdiction
 
-📚 Use responsibly and ethically for learning purposes
+Use responsibly and ethically for learning purposes
 
 The developers are not responsible for any misuse of this software.
 
-🤝 Contributing
+Contributing
 We welcome contributions! Please feel free to submit issues, feature requests, or pull requests.
 
 Development Setup
@@ -146,12 +146,12 @@ Push to the branch (git push origin feature/amazing-feature)
 
 Open a Pull Request
 
-📊 Project Stats
+Project Stats
 https://img.shields.io/github/languages/code-size/yourusername/cybershield-port-scanner
 https://img.shields.io/github/last-commit/yourusername/cybershield-port-scanner
 https://img.shields.io/github/issues/yourusername/cybershield-port-scanner
 
-🏆 Skills Demonstrated
+Skills Demonstrated
 Full-Stack Development: Flask backend + vanilla JavaScript frontend
 
 Network Programming: Socket programming and TCP/IP protocols
@@ -162,17 +162,17 @@ Performance Optimization: Concurrent programming and resource management
 
 UI/UX Design: Responsive, accessible web interface
 
-📝 License
+License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
+Acknowledgments
 Inspired by professional security tools like Nmap
 
 Built for educational purposes in cybersecurity
 
 Thanks to the open-source community for invaluable resources
 
-⭐ If you find this project useful, please give it a star on GitHub!
+If you find this project useful, please give it a star on GitHub!
 
 
 
