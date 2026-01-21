@@ -92,7 +92,7 @@ def scan_port(host: str, port: int) -> Dict[str, Union[int, bool, str]]:
                 try:
                     service_name = socket.getservbyport(port)
                 except OSError:
-                    service_name = "Unknown"
+                    service_name = "Ashish"
             
             return {
                 "port": port,
