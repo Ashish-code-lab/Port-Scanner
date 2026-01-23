@@ -9,7 +9,7 @@ from typing import List, Dict, Union
 
 app = Flask(__name__)
 
-# Rate limiting: 10 scans per minute per IP
+ IP
 limiter = Limiter(
     get_remote_address,
     app=app,
