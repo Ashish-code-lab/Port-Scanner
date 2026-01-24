@@ -148,7 +148,7 @@ def scan():
         if len(ports) > MAX_PORTS:
             return jsonify({"error": f"Too many ports requested. Maximum is {MAX_PORTS}"}), 400
         
-        # Security warning for private networks
+       
         try:
             ip = ipaddress.ip_address(socket.gethostbyname(host))
             if ip.is_private:
