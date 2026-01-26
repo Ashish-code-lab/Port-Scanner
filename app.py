@@ -16,13 +16,11 @@ limiter = Limiter(
     default_limits=["10 per minute"],
     storage_uri="memory://",
 )
-
-# Configuration
+
 MAX_PORTS = 200
 SCAN_TIMEOUT = 2.0
 MAX_WORKERS = 50
-
-# Common ports mapping
+
 COMMON_PORTS = {
     '21': 'FTP',
     '22': 'SSH',
