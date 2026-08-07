@@ -187,4 +187,12 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [3345-smallest-divisible-digit-product-i](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/3345-smallest-divisible-digit-product-i) |
+## Linked List
+|  |
+| ------- |
+| [0086-partition-list](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0086-partition-list) |
+## Two Pointers
+|  |
+| ------- |
+| [0086-partition-list](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0086-partition-list) |
 <!---LeetCode Topics End-->
