@@ -195,4 +195,16 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [0086-partition-list](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0086-partition-list) |
+## Array
+|  |
+| ------- |
+| [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
+## Hash Table
+|  |
+| ------- |
+| [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
+## Sliding Window
+|  |
+| ------- |
+| [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 <!---LeetCode Topics End-->
