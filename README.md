@@ -199,6 +199,7 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [0040-combination-sum-ii](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0040-combination-sum-ii) |
+| [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Hash Table
 |  |
@@ -216,4 +217,12 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [1141-user-activity-for-the-past-30-days-i](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/1141-user-activity-for-the-past-30-days-i) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
+## Matrix
+|  |
+| ------- |
+| [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
 <!---LeetCode Topics End-->
