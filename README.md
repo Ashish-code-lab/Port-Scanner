@@ -225,4 +225,12 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
+## String
+|  |
+| ------- |
+| [0071-simplify-path](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0071-simplify-path) |
+## Stack
+|  |
+| ------- |
+| [0071-simplify-path](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0071-simplify-path) |
 <!---LeetCode Topics End-->
