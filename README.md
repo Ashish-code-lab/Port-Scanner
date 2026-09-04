@@ -198,12 +198,14 @@ If you find this project useful, please give it a star on GitHub!
 ## Array
 |  |
 | ------- |
+| [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 | [0040-combination-sum-ii](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0040-combination-sum-ii) |
 | [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Hash Table
 |  |
 | ------- |
+| [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Sliding Window
 |  |
@@ -212,6 +214,7 @@ If you find this project useful, please give it a star on GitHub!
 ## Backtracking
 |  |
 | ------- |
+| [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 | [0040-combination-sum-ii](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0040-combination-sum-ii) |
 ## Database
 |  |
@@ -224,6 +227,7 @@ If you find this project useful, please give it a star on GitHub!
 ## Matrix
 |  |
 | ------- |
+| [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 | [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
 ## String
 |  |
@@ -233,4 +237,12 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [0071-simplify-path](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0071-simplify-path) |
+## Algorithm X
+|  |
+| ------- |
+| [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
+## Dancing Links
+|  |
+| ------- |
+| [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 <!---LeetCode Topics End-->
