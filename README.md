@@ -201,6 +201,7 @@ If you find this project useful, please give it a star on GitHub!
 | [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 | [0040-combination-sum-ii](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0040-combination-sum-ii) |
 | [0064-minimum-path-sum](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0064-minimum-path-sum) |
+| [0078-subsets](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0078-subsets) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Hash Table
 |  |
@@ -216,6 +217,7 @@ If you find this project useful, please give it a star on GitHub!
 | ------- |
 | [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
 | [0040-combination-sum-ii](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0040-combination-sum-ii) |
+| [0078-subsets](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0078-subsets) |
 ## Database
 |  |
 | ------- |
@@ -245,4 +247,8 @@ If you find this project useful, please give it a star on GitHub!
 |  |
 | ------- |
 | [0037-sudoku-solver](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0037-sudoku-solver) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0078-subsets](https://github.com/Ashish-code-lab/Port-Scanner/tree/master/0078-subsets) |
 <!---LeetCode Topics End-->
